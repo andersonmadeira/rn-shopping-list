@@ -1,14 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const primaryColor = "#15B4EE";
+const primaryColor = "#A2E47D";
 
 class App extends React.Component {
     render() {
         return (
             <View style={styles.container}>
                 <StatusBar backgroundColor={primaryColor} barStyle="light-content" />
-                <Text style={styles.appBar}>Shopping List</Text>
+                <View style={styles.appBar}>
+                    <Text style={styles.appTitle}>Shopping List</Text>
+                    <View style={styles.appIcon}>
+                        <Icon style={styles.appActionAdd} name="playlist-add" size={30} color={'white'} />
+                    </View>
+                </View>
                 <View style={styles.content}>
                     <Text>Content here</Text>
                 </View>
@@ -29,12 +35,23 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#F4F4F4',
     },
-    appBar: {
+    appTitle: {
+        flex: 1,
         fontSize: 22,
         textAlign: 'center',
-        padding: 12,
-        backgroundColor: primaryColor,
         color: '#fff'
+    },
+    appActions: {
+        
+    },
+    appActionAdd: {
+        fontSize: 30,
+    },
+    appBar: {
+        flexDirection: 'row',
+        padding: 12,
+        alignItems: 'center',
+        backgroundColor: primaryColor,
     },
 });
 
